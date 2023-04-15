@@ -2,6 +2,7 @@ const mySql = require('mysql2');
 const inquirer = require('inquirer');
 const cTable = require('console.table');
 const express = require('express');
+const path = require('path');
 // const db = require('/');
 
 const app = express();
@@ -25,11 +26,11 @@ app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
   });
 
-
 function landingPage () {
     inquirer.prompt([
         {
             name: "options",
+            type: "list",
             message: "What would you like to do?",
             choices: [
                 "View All Departments",
@@ -71,6 +72,7 @@ function landingPage () {
     });
 };
 
+landingPage();
 
 function viewDepartment() {
    let query = "SELECT * FROM department";
