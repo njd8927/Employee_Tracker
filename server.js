@@ -2,7 +2,7 @@ const mySql = require('mysql2');
 const inquirer = require('inquirer');
 const cTable = require('console.table');
 const express = require('express');
-const db = require('/');
+// const db = require('/');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -77,7 +77,7 @@ function viewDepartment() {
     connection.query(query,function (err,res) {
         if (err) throw err;
         console.table(res);
-        landingPage;
+        landingPage();
     });
 };
 
@@ -86,7 +86,7 @@ function viewRole() {
     connection.query(query, function (err,res) {
         if (err) throw err;
         console.table(res);
-        landingPage;
+        landingPage();
     });
 };
 
@@ -95,7 +95,7 @@ function viewEmployee() {
     connection.query(query, function (err,res) {
             if (err) throw err;
             console.table(res);
-            landingPage;
+            landingPage();
         });
 };
 
@@ -110,7 +110,7 @@ function addDepartment() {
         connection.query("INSERT INTO department (name) VALUES (?)", [choice.deptName], function (err,res) {
             if (err) throw err;
             console.table(res);
-            landingPage;
+            landingPage();
         });
     });
 };
@@ -136,7 +136,7 @@ function addRole() {
         connection.query("INSERT INTO role (title, salary, department_id) VALUES (?, ?, ?)", [choice.roleTitle, choice.salary, choice.departmentID], function (err,res) {
             if (err) throw err;
             console.table(res);
-            landingPage;
+            landingPage();
         });
     });
 };
@@ -167,7 +167,7 @@ function addEmployee() {
         connection.query("INSERT INTO employee (first_name, last_name, role_id, manager_id) VALUES (?, ?, ?, ?)", [choice.empFirstName, choice.empLastName, choice.empRoleID, choice.empManagerID], function (err,res) {
             if (err) throw err;
             console.table(res);
-            landingPage;
+            landingPage();
         });
     });
 };
@@ -188,7 +188,7 @@ function updateEmployee() {
         connection.query("UPDATE employee SET role_id=? WHERE first_name=?", [choice.empName, choice.roleIDUpdate], function (err,res) {
             if (err) throw err;
             console.table(res);
-            landingPage;
+            landingPage();
         });
     });
 };
