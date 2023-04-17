@@ -24,7 +24,9 @@ This project is intended to provide the user with a database to keep track of hi
 For installation instructions, please see the project github repository: https://github.com/njd8927/Employee_Tracker
 
 ## Usage
-To initialize application, type npm start in your command line and answer the prompts to have your custom database created.
+To initialize application, type npm start in your command line and answer the prompts to have your custom database created. 
+See walkthrough video for further instructions on application usage.
+https://drive.google.com/file/d/19MF8s9nCCgVFUncKp6dVcfBeoTZAL0pt/view
 
 ## Contributions
 This project was developed with assistance from JD Tadlock, Armando Osario, https://www.stackoverflow.com and MDN Web Docs.
