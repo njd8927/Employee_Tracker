@@ -75,7 +75,7 @@ function landingPage() {
 landingPage();
 
 function viewDepartment() {
-    let query = SELECT * FROM department;
+    let query = "SELECT * FROM department";
     connection.query(query, function (err, res) {
         if (err) throw err;
         console.table(res);
@@ -84,7 +84,7 @@ function viewDepartment() {
 };
 
 function viewRole() {
-    let query = SELECT * FROM "role";
+    let query = "SELECT * FROM role";
     connection.query(query, function (err, res) {
         if (err) throw err;
         console.table(res);
@@ -93,7 +93,7 @@ function viewRole() {
 };
 
 function viewEmployee() {
-    let query = SELECT * FROM employee;
+    let query = "SELECT * FROM employee";
     connection.query(query, function (err, res) {
         if (err) throw err;
         console.table(res);
