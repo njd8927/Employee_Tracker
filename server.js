@@ -2,7 +2,6 @@ const mySql = require('mysql2');
 const inquirer = require('inquirer');
 const cTable = require('console.table');
 const express = require('express');
-// const path = require('path');
 
 
 const app = express();

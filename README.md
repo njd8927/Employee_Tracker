@@ -18,7 +18,7 @@ https://opensource.org/licenses/MIT
 ### 5. [Questions](#questions)
 
 ## Description
-This project is intended to provide the user with a database to keep track of his/her company's employees. The user is able to view each employee's department, role and salary information. The user can also update information about each employee.
+This project is intended to provide the user with a database to keep track of his/her company's employees. The user is able to view all employees, departments and roles. The user is also able to add a department, role or employee and update a current employee's role.
 
 ## Installation
 For installation instructions, please see the project github repository: https://github.com/njd8927/Employee_Tracker
@@ -27,7 +27,7 @@ For installation instructions, please see the project github repository: https:/
 To initialize application, type npm start in your command line and answer the prompts to have your custom database created.
 
 ## Contributions
-This project was developed with assistance from JD Tadlock, Armando Osario, Andres Long, https://www.stackoverflow.com and MDN Web Docs.
+This project was developed with assistance from JD Tadlock, Armando Osario, https://www.stackoverflow.com and MDN Web Docs.
 
 To contribute to this project please see my github repository: https://github.com/njd8927/Employee_Tracker
 
