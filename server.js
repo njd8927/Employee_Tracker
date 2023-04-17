@@ -2,8 +2,8 @@ const mySql = require('mysql2');
 const inquirer = require('inquirer');
 const cTable = require('console.table');
 const express = require('express');
-const path = require('path');
-// const db = require('/');
+// const path = require('path');
+
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -47,27 +47,29 @@ function landingPage() {
             console.log(result.options);
 
             switch (result.options) {
-                case "View Departments":
+                case "View All Departments":
                     viewDepartment();
                     break;
-                case "View Roles":
+                case "View All Roles":
                     viewRole();
                     break;
-                case "View Employees":
+                case "View All Employees":
                     viewEmployee();
                     break;
-                case "Add Department":
+                case "Add A Department":
                     addDepartment();
                     break;
-                case "Add Role":
+                case "Add A Role":
                     addRole();
                     break;
-                case "Add Employee":
+                case "Add An Employee":
                     addEmployee();
                     break;
-                case "Update Employee Role":
+                case "Update An Employee Role":
                     updateEmployee();
                     break;
+                default:
+                    end();
             }
         });
 };
@@ -187,11 +189,16 @@ function updateEmployee() {
             message: "What is the role id you would like to update the employee to?"
         },
     ]).then(function (choice) {
-        connection.query("UPDATE employee SET role_id=? WHERE first_name=?", [choice.empName, choice.roleIDUpdate], function (err, res) {
+        connection.query("UPDATE employee SET role_id=? WHERE first_name=?", [choice.roleIDUpdate, choice.empName], function (err, res) {
             if (err) throw err;
             console.table(res);
             landingPage();
         });
     });
+};
+
+
+function end () {
+    process.exit();
 };
 
