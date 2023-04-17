@@ -1,3 +1,4 @@
+// import required packages
 const mySql = require('mysql2');
 const inquirer = require('inquirer');
 const cTable = require('console.table');
@@ -10,6 +11,7 @@ const PORT = process.env.PORT || 3001;
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
+// set up sql connection
 const connection = mySql.createConnection(
     {
         host: 'localhost',
@@ -25,6 +27,7 @@ app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
 
+// function for options menu that loads upon app initializing
 function landingPage() {
     inquirer.prompt([
         {
@@ -44,7 +47,7 @@ function landingPage() {
     ])
         .then((result) => {
             console.log(result.options);
-
+// switch case to run function associated with the user choice
             switch (result.options) {
                 case "View All Departments":
                     viewDepartment();
@@ -75,6 +78,7 @@ function landingPage() {
 
 landingPage();
 
+// function to load department table data
 function viewDepartment() {
     let query = "SELECT * FROM department";
     connection.query(query, function (err, res) {
@@ -84,6 +88,7 @@ function viewDepartment() {
     });
 };
 
+// function to load role table data
 function viewRole() {
     let query = "SELECT * FROM role";
     connection.query(query, function (err, res) {
@@ -93,6 +98,7 @@ function viewRole() {
     });
 };
 
+// function to load employee table data
 function viewEmployee() {
     let query = "SELECT * FROM employee";
     connection.query(query, function (err, res) {
@@ -102,6 +108,7 @@ function viewEmployee() {
     });
 };
 
+// function to insert new value into department table based on user input
 function addDepartment() {
     inquirer.prompt([
         {
@@ -118,6 +125,7 @@ function addDepartment() {
     });
 };
 
+// function to insert new value into role table based on user input
 function addRole() {
     inquirer.prompt([
         {
@@ -144,6 +152,7 @@ function addRole() {
     });
 };
 
+// function to insert new value into employee table based on user input
 function addEmployee() {
     inquirer.prompt([
         {
@@ -175,6 +184,7 @@ function addEmployee() {
     });
 };
 
+// function to update current employee role ID based on user input
 function updateEmployee() {
     inquirer.prompt([
         {
@@ -197,6 +207,7 @@ function updateEmployee() {
 };
 
 
+// function to end sql connection
 function end () {
     process.exit();
 };

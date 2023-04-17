@@ -1,3 +1,4 @@
+-- add values to department table
 INSERT INTO department (name) VALUES 
 ('Accounting'), 
 ('Legal'),
@@ -5,7 +6,7 @@ INSERT INTO department (name) VALUES
 ('Sales'),
 ('Customer Service');
 
-
+-- add values to role table
 INSERT INTO role (title, salary, department_id) VALUES
 ('Controller', 150000, 1),
 ('Senior Counsel', 300000, 2),
@@ -13,7 +14,7 @@ INSERT INTO role (title, salary, department_id) VALUES
 ('VP of Sales', 125000, 4),
 ('CS Manager', 70000, 5);
 
-
+-- add values to employee table
 INSERT INTO employee (first_name, last_name, role_id, manager_id) VALUES
 ('Chrissy', 'Zentai', 2, 1),
 ('Nick', 'Zentai', 5, 2),
