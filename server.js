@@ -2,14 +2,14 @@
 const mySql = require('mysql2');
 const inquirer = require('inquirer');
 const cTable = require('console.table');
-const express = require('express');
+// const express = require('express');
 
 
-const app = express();
-const PORT = process.env.PORT || 3001;
+// const app = express();
+// const PORT = process.env.PORT || 3001;
 
-app.use(express.urlencoded({ extended: false }));
-app.use(express.json());
+// app.use(express.urlencoded({ extended: false }));
+// app.use(express.json());
 
 // set up sql connection
 const connection = mySql.createConnection(
@@ -23,9 +23,9 @@ const connection = mySql.createConnection(
 );
 
 
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
-});
+// app.listen(PORT, () => {
+//     console.log(`Server running on port ${PORT}`);
+// });
 
 // function for options menu that loads upon app initializing
 function landingPage() {
